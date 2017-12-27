@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>欢迎注册</title>
+    <script src="/format.js" type="text/javascript"></script>
+</head>
+<body>
+    <tr>
+        <td th:text = "${message}"></td>
+    </tr>
+        <form action="/user/register" method="post" onsubmit="return format();">
+            账号: <input type="text" name="name" id="uname" placeholder="请输入至少3位数的账号"/>
+            密码: <input type="password" name="password" id="upass" placeholder="请输入至少3位数的密码"/>
+            确认密码：<input type="password" name="password_confirm" id="checkpass" placeholder="密码确认"/>
+            <input type="submit" id="sbm" value="确定"/>
+        </form>
+</body>
+</html>
