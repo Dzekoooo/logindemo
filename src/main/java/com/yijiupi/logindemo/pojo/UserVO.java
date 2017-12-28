@@ -8,6 +8,7 @@ import java.io.Serializable;
 *@Date: 2017/12/22
 */
 public class UserVO implements Serializable{
+
     /**
      * 用户id
      */

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 @CacheConfig(cacheNames = "users")
 public interface UserMapper {
+
     /**
      * 获取用户信息进行数据库信息验证
      * allEntries=true方法调用后将立即清除缓存

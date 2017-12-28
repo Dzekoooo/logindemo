@@ -1,6 +1,5 @@
 package com.yijiupi.logindemo.controller;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -16,11 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class BaseController {
 
-    private static final Logger LOGGR = LoggerFactory.getLogger(BaseController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class);
 
     @RequestMapping("/to/{page}")
     public String page(@PathVariable("page") String page) {
-        LOGGR.info("==============请求的页面是：= " + page);
+        LOGGER.info("==============请求的页面是：= " + page);
         return page;
     }
 }

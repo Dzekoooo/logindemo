@@ -8,7 +8,6 @@ import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -18,9 +17,9 @@ import java.util.Map;
 *@Date: 2017/12/23
 */
 
-
 @Configuration
 public class ShiroConfig {
+
     /**
      * 定义shiro 过滤器
      *
@@ -57,7 +56,6 @@ public class ShiroConfig {
         return securityManager;
     }
 
-
     /**
      * 定义 user 认证范围
      *
@@ -71,7 +69,6 @@ public class ShiroConfig {
         return userAuthorizingRealm;
     }
 
-
     /**
      * 定义 user 证书匹配器
      *
@@ -81,7 +78,4 @@ public class ShiroConfig {
     public CredentialsMatcher userCredentialsMatcher() {
         return new UserCredentialsMatcher();
     }
-
-
-
 }

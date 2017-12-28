@@ -6,6 +6,8 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.yijiupi.logindemo.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +23,12 @@ import com.google.code.kaptcha.Producer;
 
 @Controller
 public class CaptchaController {
+
     @Autowired
     private Producer captchaProducer;
+
+    @Autowired
+    private RedisService redisService;
 
     @RequestMapping("kaptcha.jpg")
     public ModelAndView getKaptchaImage(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -35,6 +41,7 @@ public class CaptchaController {
         response.setContentType("image/jpeg");
         String capText = captchaProducer.createText();
         session.setAttribute(Constants.KAPTCHA_SESSION_KEY, capText);
+        redisService.set("code", capText);
         BufferedImage bi = captchaProducer.createImage(capText);
         ServletOutputStream out = response.getOutputStream();
         //输出验证图片到页面

@@ -28,7 +28,6 @@
 	</properties>
 
 	<dependencies>
-		<!-- test -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -58,12 +57,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!--rabbit-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-amqp</artifactId>
-		</dependency>
-
 		<!--Mybatis-->
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
@@ -83,7 +76,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-
 
 		<!--mysql-->
 		<dependency>
@@ -112,7 +104,6 @@
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 			<version>1.5.6.RELEASE</version>
 		</dependency>
-
 
 		<!--shiro-core-->
 		<dependency>
@@ -144,10 +135,6 @@
 			<artifactId>ehcache-core</artifactId>
 			<version>2.6.6</version>
 		</dependency>
-
-
-
-
 	</dependencies>
 
 	<build>

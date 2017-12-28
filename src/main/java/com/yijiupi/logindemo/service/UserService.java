@@ -8,6 +8,7 @@ import org.springframework.cache.annotation.Cacheable;
 *@Description
 *@Date: 2017/12/22
 */
+
 public interface UserService {
 
     /**
@@ -16,7 +17,6 @@ public interface UserService {
      * @param userVO
      * @return
      */
-    @Cacheable(value = "usercache")
     UserVO getUser(UserVO userVO);
 
     /**

@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class DruidStatView  {
+
     /**
      * 注册一个StatViewServlet,
      * 设置监控权限以及路径

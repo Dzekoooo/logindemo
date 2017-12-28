@@ -1,13 +1,10 @@
 package com.yijiupi.logindemo.shiro;
 
-
 import com.yijiupi.logindemo.pojo.UserVO;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.slf4j.*;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,9 +15,8 @@ import java.util.Map;
 *@Description 用户授权范围管理
 *@Date: 2017/12/23
 */
-public class UserAuthorizingRealm extends AuthorizingRealm {
 
-    public static final Logger LOGGER = LoggerFactory.getLogger(UserAuthorizingRealm.class);
+public class UserAuthorizingRealm extends AuthorizingRealm {
 
     /**
      * 用户授权信息管理
@@ -57,4 +53,5 @@ public class UserAuthorizingRealm extends AuthorizingRealm {
         AuthenticationInfo info = new SimpleAuthenticationInfo(list.get(0), list.get(0).getPassword(), this.getName());
         return info;
     }
+
 }

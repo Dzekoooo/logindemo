@@ -5,6 +5,7 @@ package com.yijiupi.logindemo.util;
 *@Description 静态常量类
 *@Date: 2017/12/22
 */
+
 public class ConstansUtil {
     public static final String INPUT_NULL = "表单数据为空";
 

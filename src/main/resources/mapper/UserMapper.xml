@@ -15,10 +15,4 @@
         INSERT INTO userinfo(name, password) VALUES (#{name},#{password})
     </insert>
 
-
-    <!--<resultMap id="userRM" type="com.yijiupi.logindemo.pojo.UserPO">-->
-        <!--<id column="userId"></id>-->
-        <!--<-->
-    <!--</resultMap>-->
-
 </mapper>

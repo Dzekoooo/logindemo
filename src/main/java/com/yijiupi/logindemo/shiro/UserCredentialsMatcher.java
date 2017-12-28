@@ -10,6 +10,7 @@ import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
 *@Description 用户的 证书匹配器，校验用户的证书（密码）是否匹配
 *@Date: 2017/12/25
 */
+
 public class UserCredentialsMatcher extends SimpleCredentialsMatcher {
 
     /**

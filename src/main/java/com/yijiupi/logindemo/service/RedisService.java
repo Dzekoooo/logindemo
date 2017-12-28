@@ -7,6 +7,7 @@ package com.yijiupi.logindemo.service;
 */
 
 public interface RedisService {
+
     /**
      * 存放key
      * 

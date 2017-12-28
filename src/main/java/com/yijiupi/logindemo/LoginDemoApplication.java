@@ -30,5 +30,4 @@ public class LoginDemoApplication extends SpringBootServletInitializer implement
 		return builder.sources(LoginDemoApplication.class);
 	}
 
-
 }
