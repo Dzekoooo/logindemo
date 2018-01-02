@@ -2,7 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.yijiupi.logindemo.dao.UserMapper">
-
     <select id="getUser" resultType="com.yijiupi.logindemo.pojo.UserPO" parameterType="com.yijiupi.logindemo.pojo.UserPO">
       SELECT  id,name,password FROM userinfo WHERE name=#{name} and password=#{password}
     </select>
@@ -14,5 +13,4 @@
     <insert id="saveUser" parameterType="com.yijiupi.logindemo.pojo.UserPO" useGeneratedKeys="true" keyProperty="userid">
         INSERT INTO userinfo(name, password) VALUES (#{name},#{password})
     </insert>
-
 </mapper>

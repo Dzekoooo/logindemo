@@ -1,7 +1,6 @@
 package com.yijiupi.logindemo.dao;
 
 import com.yijiupi.logindemo.pojo.UserPO;
-import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Repository;
 */
 
 @Repository
-@CacheConfig(cacheNames = "users")
 public interface UserMapper {
 
     /**

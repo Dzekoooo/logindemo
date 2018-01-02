@@ -10,6 +10,7 @@ import org.springframework.util.Assert;
 */
 public class Md5EnCoder {
     public static final String DEFAULT_SALT = "##yjp##";
+
     public static final int DEFAULT_HASH_ITERATION = 3;
 
     public static String getMD5Hash(Object source) {

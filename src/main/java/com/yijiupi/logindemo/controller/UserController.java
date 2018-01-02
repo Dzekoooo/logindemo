@@ -1,6 +1,7 @@
 package com.yijiupi.logindemo.controller;
 
 import com.yijiupi.logindemo.pojo.UserVO;
+import com.yijiupi.logindemo.service.MailService;
 import com.yijiupi.logindemo.service.RedisService;
 import com.yijiupi.logindemo.service.UserService;
 import com.yijiupi.logindemo.util.ConstansUtil;
@@ -29,12 +30,25 @@ public class UserController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
+    private String target = "479473984@qq.com";
+
     @Autowired
     private UserService userService;
 
     @Autowired
     private RedisService redisService;
 
+    @Autowired
+    private MailService mailService;
+
+    /**
+     * 登录逻辑
+     *
+     * @param userVO
+     * @param mv
+     * @param code
+     * @return      登录页面、成功页面
+     */
     @RequestMapping("login")
     public ModelAndView userLogin(UserVO userVO, ModelAndView mv, String code) {
         LOGGER.info("=============进入userLogin()方法=============");
@@ -51,6 +65,7 @@ public class UserController {
             subject.login(token);
             //校对验证码
             if (codeException.equals(code)){
+                mailService.sendSimpleMail(target, "主题：登录提醒", "您的账号在ip为" +  redisService.get("requesIP") + "登录");
                 mv = createView(ConstansUtil.CONGRATULATION_LOGIN, PageUtil.SUCCESSPAGE);
                 return mv;
             }
@@ -64,6 +79,13 @@ public class UserController {
         return mv;
     }
 
+    /**
+     * 注册逻辑
+     *
+     * @param userVO
+     * @param mv
+     * @return     登录页面、注册页面
+     */
     @RequestMapping("register")
     public ModelAndView register(UserVO userVO, ModelAndView mv){
         String name = userVO.getName();
@@ -73,7 +95,7 @@ public class UserController {
             mv = createView(ConstansUtil.CONGRATULATION_REGISTER, PageUtil.LOGINPAGE);
             return mv;
         }
-        mv = createView(ConstansUtil.USERNAME_EXISTED, PageUtil.REGISTER);
+        mv = createView(ConstansUtil.USERNAME_EXISTED, PageUtil.REGISTERPAGE);
         return mv;
     }
 }

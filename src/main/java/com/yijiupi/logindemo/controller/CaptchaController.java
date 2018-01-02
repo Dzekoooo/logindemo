@@ -30,6 +30,14 @@ public class CaptchaController {
     @Autowired
     private RedisService redisService;
 
+    /**
+     * 获取验证码并编码成图片输出
+     *
+     * @param request
+     * @param response
+     * @return
+     * @throws Exception
+     */
     @RequestMapping("kaptcha.jpg")
     public ModelAndView getKaptchaImage(HttpServletRequest request, HttpServletResponse response) throws Exception {
         HttpSession session = request.getSession();
@@ -55,4 +63,5 @@ public class CaptchaController {
         System.out.println("===============验证码是: " + code + "=============");
         return null;
     }
+
 }

@@ -7,7 +7,8 @@ import java.io.Serializable;
 *@Description  UserDO对象
 *@Date: 2017/12/22
 */
-public class UserVO implements Serializable{
+
+public class UserVO implements Serializable {
 
     /**
      * 用户id

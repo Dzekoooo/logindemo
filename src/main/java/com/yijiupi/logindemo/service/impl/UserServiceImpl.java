@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
         LOGGER.info("==========进入 userMapper的checkName()方法========");
         UserPO userPO = userMapper.checkName(name);
         boolean result = false;
-        if (null == userPO){
+        if (null == userPO) {
             result = true;
         }
         return result;

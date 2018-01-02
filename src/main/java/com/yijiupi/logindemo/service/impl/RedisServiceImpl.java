@@ -18,12 +18,24 @@ public class RedisServiceImpl implements RedisService {
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
+    /**
+     * key-value 设置缓存
+     *
+     * @param key
+     * @param value
+     */
     @Override
     public void set(String key, String value) {
         ValueOperations<String, String> vo = redisTemplate.opsForValue();
         vo.set(key, value);
     }
 
+    /**
+     * 通过key 读取缓存
+     *
+     * @param key
+     * @return
+     */
     @Override
     public String get(String key) {
         ValueOperations<String, String> vo = redisTemplate.opsForValue();

@@ -12,6 +12,6 @@ public class PageUtil {
 
     public static final String SUCCESSPAGE = "success";
 
-    public static final String REGISTER = "register";
+    public static final String REGISTERPAGE = "register";
 
 }
